@@ -8,15 +8,7 @@
 
 import UIKit
 
-//struct News {
-//    var id: Int
-//    var title: String
-//    var description: String
-//    var content: String
-//    var categoryID: [Int]
-//    var image: String?
-//    var link: String = "https://..."
-//}
+
 
 struct NewsData: Codable {
     var status: String
@@ -34,6 +26,7 @@ struct articles: Codable {
     var publishedAt: String?
     var content: String?
     struct source: Codable {
+        var id: String?
         var name: String?
     }
     let source: source

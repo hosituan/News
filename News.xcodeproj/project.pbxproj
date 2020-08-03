@@ -11,6 +11,9 @@
 		FB3A501D24D5819000FA698C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A501C24D5819000FA698C /* CustomCollectionViewCell.swift */; };
 		FB9C9C2A24D5E20500C26DC1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9C9C2924D5E20500C26DC1 /* User.swift */; };
 		FBA3BB3624D854B3006A7445 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3524D854B3006A7445 /* UIColorExtension.swift */; };
+		FBA3BB3824D85FAE006A7445 /* SourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3724D85FAE006A7445 /* SourceManager.swift */; };
+		FBA3BB3A24D85FBB006A7445 /* SourceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3924D85FBB006A7445 /* SourceData.swift */; };
+		FBA3BB3C24D860C0006A7445 /* GetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3B24D860BF006A7445 /* GetAPI.swift */; };
 		FBDD85D324D74AF7003EABAA /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD85D224D74AF7003EABAA /* NewsDetailViewController.swift */; };
 		FBEC080724D544890044474C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC080624D544890044474C /* AppDelegate.swift */; };
 		FBEC080924D544890044474C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC080824D544890044474C /* SceneDelegate.swift */; };
@@ -33,6 +36,9 @@
 		FB9C9C2824D5CD5C00C26DC1 /* FontsFree-Net-SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProText-Medium.ttf"; sourceTree = "<group>"; };
 		FB9C9C2924D5E20500C26DC1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBA3BB3524D854B3006A7445 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		FBA3BB3724D85FAE006A7445 /* SourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceManager.swift; sourceTree = "<group>"; };
+		FBA3BB3924D85FBB006A7445 /* SourceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceData.swift; sourceTree = "<group>"; };
+		FBA3BB3B24D860BF006A7445 /* GetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAPI.swift; sourceTree = "<group>"; };
 		FBDD85D224D74AF7003EABAA /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		FBEC080324D544890044474C /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEC080624D544890044474C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +129,6 @@
 		FBEC080524D544890044474C /* News */ = {
 			isa = PBXGroup;
 			children = (
-				FBA3BB3424D8549C006A7445 /* Extension */,
 				FBEC081C24D544E60044474C /* Controller */,
 				FBEC081B24D544E20044474C /* Model */,
 				FBEC081A24D544DB0044474C /* View */,
@@ -131,6 +136,7 @@
 				FBEC080824D544890044474C /* SceneDelegate.swift */,
 				FBEC080F24D5448C0044474C /* Assets.xcassets */,
 				FBEC081424D5448C0044474C /* Info.plist */,
+				FBA3BB3424D8549C006A7445 /* Extension */,
 				FB9C9C2624D5CC7B00C26DC1 /* Font */,
 			);
 			path = News;
@@ -148,9 +154,12 @@
 		FBEC081B24D544E20044474C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB9C9C2924D5E20500C26DC1 /* User.swift */,
 				FBEC081D24D5477C0044474C /* NewsData.swift */,
 				FBEC082D24D54A2C0044474C /* NewsManager.swift */,
-				FB9C9C2924D5E20500C26DC1 /* User.swift */,
+				FBA3BB3724D85FAE006A7445 /* SourceManager.swift */,
+				FBA3BB3924D85FBB006A7445 /* SourceData.swift */,
+				FBA3BB3B24D860BF006A7445 /* GetAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,9 +167,9 @@
 		FBEC081C24D544E60044474C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FB8152A624D83DFF008AE15C /* Custom Collection */,
 				FBEC083624D576600044474C /* HomeViewController.swift */,
 				FBDD85D224D74AF7003EABAA /* NewsDetailViewController.swift */,
+				FB8152A624D83DFF008AE15C /* Custom Collection */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +293,9 @@
 				FBEC082E24D54A2C0044474C /* NewsManager.swift in Sources */,
 				FB3A501D24D5819000FA698C /* CustomCollectionViewCell.swift in Sources */,
 				FBEC081E24D5477C0044474C /* NewsData.swift in Sources */,
+				FBA3BB3A24D85FBB006A7445 /* SourceData.swift in Sources */,
+				FBA3BB3C24D860C0006A7445 /* GetAPI.swift in Sources */,
+				FBA3BB3824D85FAE006A7445 /* SourceManager.swift in Sources */,
 				FBEC083724D576600044474C /* HomeViewController.swift in Sources */,
 				FBA3BB3624D854B3006A7445 /* UIColorExtension.swift in Sources */,
 				FBEC080724D544890044474C /* AppDelegate.swift in Sources */,

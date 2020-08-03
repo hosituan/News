@@ -17,6 +17,9 @@
         <array key="FontsFree-Net-SFProText-Medium.ttf">
             <string>SFProText-Medium</string>
         </array>
+        <array key="FontsFree-Net-SFProText-Regular.ttf">
+            <string>SFProText-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -96,8 +99,8 @@
                                                 <color key="textColor" red="0.62745098040000002" green="0.64705882349999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iRW-bx-EUj">
-                                                <rect key="frame" x="10" y="4.0000000000000018" width="30" height="30.666666666666671"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iRW-bx-EUj">
+                                                <rect key="frame" x="10" y="5" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="e3r-w2-FZe"/>
                                                     <constraint firstAttribute="height" constant="30" id="uAO-xf-akk"/>
@@ -173,6 +176,7 @@
                     <connections>
                         <outlet property="collectionView" destination="orl-jo-qGs" id="fBS-9p-OCF"/>
                         <outlet property="descriptionLabel" destination="0Z5-5s-tk8" id="bnj-43-crT"/>
+                        <outlet property="sourceImageView" destination="iRW-bx-EUj" id="u0z-ZU-8Gs"/>
                         <outlet property="sourceLabel" destination="cQq-x2-DDH" id="UHb-wv-Qxm"/>
                         <outlet property="timeLabel" destination="hj9-U1-MKy" id="db3-nw-p9F"/>
                         <outlet property="titleLabel" destination="rfe-Oo-CnK" id="JjF-yl-ber"/>
@@ -195,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5h-Ua-uB3" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="665.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="680.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2c-Uz-CfW" userLabel="Image View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
@@ -249,7 +253,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="Xl4-T8-aCT" secondAttribute="trailing" constant="20" id="c1Z-0O-ggQ"/>
                                                     <constraint firstItem="O1i-EA-aXG" firstAttribute="top" secondItem="G2c-Uz-CfW" secondAttribute="top" id="fac-fR-D7y"/>
                                                     <constraint firstAttribute="height" constant="500" id="hLq-za-b0D"/>
-                                                    <constraint firstItem="GnO-1m-qAZ" firstAttribute="top" secondItem="G2c-Uz-CfW" secondAttribute="top" constant="50" id="vG3-1K-MaW"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqg-UB-wjH" userLabel="Source View">
@@ -300,9 +303,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-Je-DJP" userLabel="Bottom View">
-                                                <rect key="frame" x="0.0" y="645.33333333333337" width="414" height="10"/>
+                                                <rect key="frame" x="0.0" y="645.33333333333337" width="414" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I8-RZ-9Cj">
+                                                        <rect key="frame" x="10" y="3" width="394" height="19.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                                        <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="10" id="fAm-zI-coA"/>
+                                                    <constraint firstItem="4I8-RZ-9Cj" firstAttribute="centerY" secondItem="3b0-Je-DJP" secondAttribute="centerY" id="QgI-UX-DQR"/>
+                                                    <constraint firstItem="4I8-RZ-9Cj" firstAttribute="leading" secondItem="3b0-Je-DJP" secondAttribute="leading" constant="10" id="TfJ-6y-Nxc"/>
+                                                    <constraint firstAttribute="height" constant="25" id="fAm-zI-coA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4I8-RZ-9Cj" secondAttribute="trailing" constant="10" id="m88-MJ-0CB"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -343,6 +357,7 @@
                             <constraint firstItem="Oik-LE-NRC" firstAttribute="top" secondItem="Vqq-UP-3cc" secondAttribute="top" id="ZVf-rm-Byh"/>
                             <constraint firstItem="Oik-LE-NRC" firstAttribute="leading" secondItem="6wN-9j-gfA" secondAttribute="leading" id="Zt1-nw-ayN"/>
                             <constraint firstAttribute="bottom" secondItem="Oik-LE-NRC" secondAttribute="bottom" id="fdN-Ic-3NQ"/>
+                            <constraint firstItem="GnO-1m-qAZ" firstAttribute="top" secondItem="6wN-9j-gfA" secondAttribute="top" constant="6" id="nJ2-uc-YK5"/>
                             <constraint firstItem="Oik-LE-NRC" firstAttribute="trailing" secondItem="6wN-9j-gfA" secondAttribute="trailing" id="yzq-i8-peu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6wN-9j-gfA"/>
@@ -354,6 +369,7 @@
                         <outlet property="imageMain" destination="O1i-EA-aXG" id="f3M-XB-MtJ"/>
                         <outlet property="imageSouce" destination="sLA-OH-Uni" id="h1n-zb-Cto"/>
                         <outlet property="imageView" destination="G2c-Uz-CfW" id="mGb-9k-OPf"/>
+                        <outlet property="linkLabel" destination="4I8-RZ-9Cj" id="YdD-Kv-4qn"/>
                         <outlet property="scrollView" destination="Oik-LE-NRC" id="TDK-Jz-Jh1"/>
                         <outlet property="sourceLabel" destination="I3C-ia-AlR" id="T6w-aS-dWr"/>
                         <outlet property="timeLabel" destination="31O-9M-v5c" id="yio-E6-AtX"/>
@@ -369,7 +385,6 @@
         <image name="back" width="29" height="29"/>
         <image name="bookmark" width="16" height="20"/>
         <image name="share" width="18" height="22"/>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="tray.2.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>
