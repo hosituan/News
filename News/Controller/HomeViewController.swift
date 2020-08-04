@@ -13,6 +13,8 @@ import ProgressHUD
 
 class HomeViewController: UIViewController {
     
+
+    @IBOutlet var categoryLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var sourceImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
@@ -41,6 +43,11 @@ class HomeViewController: UIViewController {
         
         setUpUI()
     }
+    
+    @IBAction func tapSettingButton(_ sender: UIButton) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNewsDetail" {
             let vc = segue.destination as! NewsDetailViewController

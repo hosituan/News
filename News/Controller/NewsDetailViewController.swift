@@ -74,8 +74,10 @@ class NewsDetailViewController: UIViewController {
     }
     
     @IBAction func tabShareButton(_ sender: UIButton) {
+        
     }
     
     @IBAction func tapSaveButton(_ sender: UIButton) {
+        
     }
 }
