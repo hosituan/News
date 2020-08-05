@@ -7,27 +7,24 @@
 //
 
 import Foundation
-import ProgressHUD
+import MBProgressHUD
 
 class GetAPI {
     func getFromAPI<T: Codable>(for: T.Type = T.self, urlString: String, completionHandler: @escaping (T) -> () ) {
-        ProgressHUD.show()
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             session.dataTask(with: url, completionHandler: {
                 (data, response, error) in
                 if (error != nil) {
                     print(error!)
-                    ProgressHUD.dismiss()
+    
                     return
                 }
                 if let dataRespone = data {
                     if let result:T = self.parseJSON(data: dataRespone) {
-                        ProgressHUD.dismiss()
                         completionHandler(result)
                     }
                     else {
-                        ProgressHUD.dismiss()
                         print("nil result")
                     }
                 }

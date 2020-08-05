@@ -31,8 +31,6 @@ class NewsDetailViewController: UIViewController {
     
     func updateUI() {
         imageMain.layer.cornerRadius = 20
-        backButton.backgroundColor = UIColor(rgb: 0xA0A5B5).withAlphaComponent(0.2)
-        backButton.layer.cornerRadius = 5
         linkLabel.isUserInteractionEnabled = true
         let tapLinkLabel = UITapGestureRecognizer(target: self, action: #selector(NewsDetailViewController.tapLinkLabel(sender:)))
         linkLabel.isUserInteractionEnabled = true

@@ -8,23 +8,23 @@
 
 import UIKit
 import UPCarouselFlowLayout
-import ProgressHUD
+import MBProgressHUD
 
 
+var needToReload = false
 class HomeViewController: UIViewController {
     
-
+    
     @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var sourceImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    
     var newsManager = NewsManager()
-    var sourceManager = SourceManager()
     var currentPage = 0
-    var user = User(name: "Ho Si Tuan", categoryID: 1)
     
     var orientation: UIDeviceOrientation {
         return UIDevice.current.orientation
@@ -32,20 +32,45 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsManager.fetchURL(url: "bitcoin") {
-            self.sourceManager.fetchURL(url: "") {
-                DispatchQueue.main.async {
-                    self.collectionView.delegate = self
-                    self.collectionView.dataSource = self
-                }
-            }
-        }
-        
+        loadNews()
         setUpUI()
     }
     
+    //load news if category change
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if needToReload {
+            needToReload = false
+            loadNews()
+            categoryLabel.text = newsManager.getShowingCategory()
+        }
+    }
+    
     @IBAction func tapSettingButton(_ sender: UIButton) {
-        
+        self.performSegue(withIdentifier: "openSetting", sender: nil)
+    }
+    
+    @IBAction func tapSourceLabel(sender: UITapGestureRecognizer) {
+        UIApplication.shared.open(newsManager.getSourceURL(currentPage))
+    }
+    func loadNews() {
+        let loadingNotification = MBProgressHUD.showAdded(to: view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.indeterminate
+        loadingNotification.label.text = "Loading"
+        newsManager.fetchURL() {
+            DispatchQueue.main.async {
+                self.collectionView.delegate = self
+                self.collectionView.dataSource = self
+                
+                self.collectionView!.reloadData()
+                self.collectionView!.setNeedsDisplay()
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+        }
+    }
+    
+    func loadCategoryNews(_ categorySelected: String) {
+        favoriteCategory = [categorySelected]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,6 +84,9 @@ class HomeViewController: UIViewController {
             vc.imageSourceURL = newsManager.getSourceImageURL(currentPage)
             vc.link = newsManager.getLink(currentPage)
         }
+        if segue.identifier == "openSetting" {
+            
+        }
     }
     
     func setUpUI() {
@@ -67,13 +95,10 @@ class HomeViewController: UIViewController {
         let tapSourceLabel = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.tapSourceLabel(sender:)))
         sourceLabel.isUserInteractionEnabled = true
         sourceLabel.addGestureRecognizer(tapSourceLabel)
+        categoryLabel.text = newsManager.getShowingCategory()
     }
-    @IBAction func tapSourceLabel(sender: UITapGestureRecognizer) {
-        print(currentPage)
-        if let url = newsManager.getSourceURL(currentPage) {
-            UIApplication.shared.open(url)
-        }
-    }
+    
+    
 }
 
 
@@ -90,16 +115,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
         currentPage = indexPath.row
-        if let url = newsManager.getURLImage(indexPath.row) {
-            cell.imageView.sd_setImage(with: url, completed: nil)
-        }
+        cell.imageView.sd_setImage(with: newsManager.getURLImage(indexPath.row), completed: nil)
         self.titleLabel.text = newsManager.getTitle(indexPath.row)
         self.descriptionLabel.text = newsManager.getDescription(indexPath.row)
         self.sourceLabel.text = newsManager.getSource(indexPath.row)
         self.timeLabel.text = newsManager.getTime(indexPath.row)
-        if let url = newsManager.getSourceImageURL(indexPath.row) {
-            self.sourceImageView.sd_setImage(with: url, completed: nil)
-        }
+        self.sourceImageView.sd_setImage(with: newsManager.getSourceImageURL(indexPath.row), completed: nil)
+        
         return cell
     }
     
