@@ -10,8 +10,10 @@ import UIKit
 import UPCarouselFlowLayout
 import MBProgressHUD
 
-
 var needToReload = false
+var currentPage = 0
+var newsManager = NewsManager()
+
 class HomeViewController: UIViewController {
     
     
@@ -23,8 +25,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
-    var newsManager = NewsManager()
-    var currentPage = 0
+    
+    
     
     var orientation: UIDeviceOrientation {
         return UIDevice.current.orientation
@@ -81,7 +83,12 @@ class HomeViewController: UIViewController {
             vc.time = newsManager.getTime(currentPage)
             vc.source = newsManager.getSource(currentPage)
             vc.imageMainURL = newsManager.getURLImage(currentPage)
-            vc.imageSourceURL = newsManager.getSourceImageURL(currentPage)
+            vc.newsDescription = newsManager.getDescription(currentPage)
+            vc.imageSourceURL = newsManager.getTempSourceImageURL(currentPage)
+            newsManager.getSourceImageURL(currentPage) {
+                result in
+                vc.imageSourceURL = result
+            }
             vc.link = newsManager.getLink(currentPage)
         }
         if segue.identifier == "openSetting" {
@@ -120,7 +127,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.descriptionLabel.text = newsManager.getDescription(indexPath.row)
         self.sourceLabel.text = newsManager.getSource(indexPath.row)
         self.timeLabel.text = newsManager.getTime(indexPath.row)
-        self.sourceImageView.sd_setImage(with: newsManager.getSourceImageURL(indexPath.row), completed: nil)
+        self.sourceImageView.sd_setImage(with: newsManager.getTempSourceImageURL(indexPath.row), completed: nil)
+        newsManager.getSourceImageURL(indexPath.row) {
+            url in
+            if url != newsManager.getTempSourceImageURL(indexPath.row) {
+                self.sourceImageView.sd_setImage(with: url, completed: nil)
+            }
+        }
+        
         
         return cell
     }

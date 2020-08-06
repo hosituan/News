@@ -58,10 +58,7 @@ class SettingViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func tapSavedView(sender: UITapGestureRecognizer) {
-        needToReload = true
-        savedView.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.8039215686, blue: 0.5176470588, alpha: 1)
-        category = savedView.accessibilityIdentifier!
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "showSavedNews", sender: nil)
     }
 
     

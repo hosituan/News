@@ -8,14 +8,15 @@
 
 import UIKit
 import SDWebImage
+import SwiftMessages
 
 class NewsDetailViewController: UIViewController {
     
-    var time, source, content, newsTitle, link: String?
+    var time, newsDescription, source, content, newsTitle, link: String?
     var imageMainURL, imageSourceURL: URL?
     @IBOutlet var backButton: UIButton!
     @IBOutlet var imageMain: UIImageView!
-    @IBOutlet var imageSouce: UIImageView!
+    @IBOutlet var imageSource: UIImageView!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -35,6 +36,7 @@ class NewsDetailViewController: UIViewController {
         let tapLinkLabel = UITapGestureRecognizer(target: self, action: #selector(NewsDetailViewController.tapLinkLabel(sender:)))
         linkLabel.isUserInteractionEnabled = true
         linkLabel.addGestureRecognizer(tapLinkLabel)
+        imageSource.layer.cornerRadius = 0.5 * self.imageSource.bounds.size.width
         
         self.imageMain.layer.maskedCorners = [ .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         if let title = newsTitle {
@@ -52,8 +54,11 @@ class NewsDetailViewController: UIViewController {
         if let imageURL = imageMainURL {
             self.imageMain.sd_setImage(with: imageURL, completed: nil)
         }
+        newsManager.getSourceImageURL(currentPage) { result in
+            self.imageSource.sd_setImage(with: result, completed: nil)
+        }
         if let imageSourceURL = imageSourceURL {
-            self.imageSouce.sd_setImage(with: imageSourceURL, completed: nil)
+            self.imageSource.sd_setImage(with: imageSourceURL, completed: nil)
         }
         if let link = link {
             self.linkLabel.text = link
@@ -72,10 +77,26 @@ class NewsDetailViewController: UIViewController {
     }
     
     @IBAction func tabShareButton(_ sender: UIButton) {
-        
+
     }
     
     @IBAction func tapSaveButton(_ sender: UIButton) {
+        //show alert
+        let warning = MessageView.viewFromNib(layout: .cardView)
+        warning.configureTheme(.success)
+        warning.configureDropShadow()
         
+        warning.configureContent(title: "Success", body: "Saved")
+        warning.button?.isHidden = true
+        var warningConfig = SwiftMessages.defaultConfig
+        warningConfig.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
+        SwiftMessages.show(config: warningConfig, view: warning)
+        
+        //save value
+        let title:String = newsTitle ?? "No Title"
+        let description:String = newsDescription ?? "No Description"
+        let imageLink:String = imageMainURL?.absoluteString ?? ""
+        let newsLink:String = link ?? ""
+        saveNewsCoreDataManager.createData(title: title, description: description, imageLink: imageLink, link: newsLink)
     }
 }

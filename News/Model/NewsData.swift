@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 struct NewsData: Codable {
     var status: String
     var totalResults: Int
@@ -29,7 +27,17 @@ struct articles: Codable {
         var id: String?
         var name: String?
     }
-    let source: source
+    let source: source?
+    
+    init(title: String, description: String, url: String, urlToImage: String) {
+        self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.source = nil
+        self.content = nil
+        self.publishedAt = nil
+    }
 }
 
 

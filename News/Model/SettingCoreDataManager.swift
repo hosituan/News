@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-class CoreDataManager {
-    var saveData: [NSManagedObject] = []
+class SettingCoreDataManager {
+    var settingData: [NSManagedObject] = []
     
     func loadData()
     {
@@ -23,8 +23,8 @@ class CoreDataManager {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserData")
         fetchRequest.fetchLimit = 1
         do {
-            saveData = try managedContext.fetch(fetchRequest)
-            if saveData.count == 0 {
+            settingData = try managedContext.fetch(fetchRequest)
+            if settingData.count == 0 {
                 createData()
             }
         } catch let error as NSError {
@@ -62,7 +62,6 @@ class CoreDataManager {
     }
     
     func createData() {
-      
       guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
         else {
             return
@@ -89,14 +88,14 @@ class CoreDataManager {
     }
     
     func getLanguage() -> String {
-        if saveData.count > 0 {
-            return saveData[0].value(forKeyPath: "language") as? String ?? "en"
+        if settingData.count > 0 {
+            return settingData[0].value(forKeyPath: "language") as? String ?? "en"
         }
         else  { return "en" }
     }
     func getCategory() -> [String] {
-        if saveData.count > 0 {
-            let category = saveData[0].value(forKey: "favoriteCategory") as? String
+        if settingData.count > 0 {
+            let category = settingData[0].value(forKey: "favoriteCategory") as? String
             let categoryArray = category?.components(separatedBy: ",")
             return categoryArray ?? []
         }
@@ -105,8 +104,8 @@ class CoreDataManager {
         }
     }
     func getShowFavorite() -> Bool {
-        if saveData.count > 0 {
-            return saveData[0].value(forKey: "showFavorite") as? Bool ?? true
+        if settingData.count > 0 {
+            return settingData[0].value(forKey: "showFavorite") as? Bool ?? true
         }
         else { return false }
     }

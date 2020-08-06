@@ -1,17 +1,83 @@
 {
   "images" : [
     {
-      "filename" : "setting-40.png",
+      "filename" : "setting Icon-41.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "setting-40@2x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "setting Icon-40.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "setting Icon Dark-40.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "setting Icon-40@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "setting-40@3x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "setting Icon-40@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "setting Icon Dark-40@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "setting Icon-40@3x-1.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "setting Icon-40@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "setting Icon Dark-40@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

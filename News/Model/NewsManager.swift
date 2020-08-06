@@ -9,10 +9,11 @@
 import UIKit
 import SDWebImage
 import CoreData
+import SwiftLinkPreview
 
 var language = "en"
 var favoriteCategory:[String] = [] //favorite category
-var coreDataManager = CoreDataManager()
+var coreDataManager = SettingCoreDataManager()
 var category:String = ""
 
 
@@ -119,33 +120,63 @@ class NewsManager {
         return articles[index].url ?? "This post doesn't have link"
     }
     func getSource(_ index: Int) -> String {
-        return articles[index].source.name ?? "Unknown"
+        return articles[index].source?.name ?? "Unknown"
     }
     func getSourceId(_ index: Int) -> String {
-        return articles[index].source.id ?? "Unknown"
+        return articles[index].source?.id ?? "Unknown"
     }
     
     func getContent(_ index: Int) -> String {
         return articles[index].content ?? "This news doesn't have content."
     }
     
-    func getSourceImageURL(_ index: Int) -> URL {
+    func getSourceURL(_ index: Int) -> URL {
+        if let url = articles[index].url {
+            let urlArr = url.components(separatedBy: "/")
+            if let URL = URL(string: "https://\(urlArr[2])/") {
+                return URL
+            }
+        }
+        return URL(string: "https://www.google.com/")!
+    }
+    
+    func getTempSourceImageURL(_ index: Int) -> URL {
         if let url = articles[index].url {
             let urlArr = url.components(separatedBy: "/")
             if let URL = URL(string: "https://\(urlArr[2])/favicon.ico") {
                 return URL
             }
         }
-        return URL(string: "https://www.google.com/")!
+        return URL(string: "https://www.google.com/favicon.ico")!
     }
-    func getSourceURL(_ index: Int) -> URL {
+    
+    func getSourceImageURL(_ index: Int, completionHandler: @escaping (URL)-> ()){
         if let url = articles[index].url {
-            let urlArr = url.components(separatedBy: "/")
-            if let URL = URL(string: "https://\(urlArr[2])") {
-                return URL
+            getIconURL(url: url) {
+                finalLink in
+                if let link = URL(string: finalLink) {
+                    completionHandler(link)
+                }
             }
         }
-        return URL(string: "https://www.google.com/")!
+    }
+    
+    func getIconURL(url: String, completionHandler: @escaping (String) -> ()) {
+        var finalLink = ""
+        let session: URLSession = URLSession.shared
+        let workQueue: DispatchQueue = SwiftLinkPreview.defaultWorkQueue
+        let responseQueue: DispatchQueue = DispatchQueue.main
+        let cache: Cache = DisabledCache.instance
+        let linkPre = SwiftLinkPreview(session: session, workQueue: workQueue, responseQueue: responseQueue, cache: cache)
+        linkPre.preview(url,
+                        onSuccess: {
+                            result in
+                            if let iconLink = result.icon {
+                                finalLink = iconLink
+                                completionHandler(finalLink)
+                            }
+        },
+                        onError: { error in print("\(error)")})
     }
 }
 
