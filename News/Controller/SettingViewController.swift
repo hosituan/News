@@ -35,6 +35,7 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func tapFavoriteButton(_ sender: UIButton) {
+        keyWord = ""
         needToReload = true
         isShow.isOn = true
         coreDataManager.updateShowFavorite(isShow.isOn)
@@ -47,12 +48,14 @@ class SettingViewController: UIViewController {
     
     @IBAction func tapAllNewsView(sender: UITapGestureRecognizer) {
         needToReload = true
+        keyWord = ""
         allNewsView.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.8039215686, blue: 0.5176470588, alpha: 1)
         category = allNewsView.accessibilityIdentifier!
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func tapMyFeedView(sender: UITapGestureRecognizer) {
         needToReload = true
+        keyWord = ""
         myFeedView.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.8039215686, blue: 0.5176470588, alpha: 1)
         category = myFeedView.accessibilityIdentifier!
         self.dismiss(animated: true, completion: nil)

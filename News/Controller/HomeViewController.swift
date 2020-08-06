@@ -9,6 +9,7 @@
 import UIKit
 import UPCarouselFlowLayout
 import MBProgressHUD
+import SkyFloatingLabelTextField
 
 var needToReload = false
 var currentPage = 0
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
+    @IBOutlet var searchTextField: SkyFloatingLabelTextField!
     
     
     
@@ -47,6 +49,24 @@ class HomeViewController: UIViewController {
             categoryLabel.text = newsManager.getShowingCategory()
         }
     }
+    @IBAction func tapSearchButton(_ sender: UIButton) {
+        
+        searchTextField.endEditing(true)
+        
+        if categoryLabel.isHidden {
+            hideObject(searchTextField)
+            showObject(categoryLabel)
+            
+        }
+        else {
+            hideObject(categoryLabel)
+            showObject(searchTextField)
+        }
+        
+        
+        
+        
+    }
     
     @IBAction func tapSettingButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "openSetting", sender: nil)
@@ -56,10 +76,12 @@ class HomeViewController: UIViewController {
         UIApplication.shared.open(newsManager.getSourceURL(currentPage))
     }
     func loadNews() {
-        let loadingNotification = MBProgressHUD.showAdded(to: view, animated: true)
+        let loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.indeterminate
         loadingNotification.label.text = "Loading"
+        searchTextField.delegate = self
         newsManager.fetchURL() {
+            
             DispatchQueue.main.async {
                 self.collectionView.delegate = self
                 self.collectionView.dataSource = self
@@ -103,6 +125,7 @@ class HomeViewController: UIViewController {
         sourceLabel.isUserInteractionEnabled = true
         sourceLabel.addGestureRecognizer(tapSourceLabel)
         categoryLabel.text = newsManager.getShowingCategory()
+        searchTextField.textAlignment = .center
     }
     
     
@@ -145,5 +168,51 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        print("end")
+        if searchTextField.text != "" {
+            categoryLabel.text = searchTextField.text
+            keyWord = searchTextField.text!
+            
+            let loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+            loadingNotification.mode = MBProgressHUDMode.indeterminate
+            loadingNotification.label.text = "Loading"
+            
+            newsManager.fetchURL {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+            }
+        }
+        showObject(categoryLabel)
+        hideObject(searchTextField)
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
+        return true
+    }
+    
+    func showObject(_ object: UIView) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            object.alpha = 1
+        }, completion: { finished in
+            object.isHidden = false
+        })
+    }
+    
+    func hideObject(_ object: UIView) {
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            object.alpha = 0
+        }, completion: { finished in
+            object.isHidden = true
+        })
+    }
+    
+}
 
 

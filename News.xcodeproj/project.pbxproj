@@ -15,6 +15,7 @@
 		FB327B6624D9E2EF00C30CB8 /* SettingCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB327B6524D9E2EF00C30CB8 /* SettingCoreDataManager.swift */; };
 		FB3A501D24D5819000FA698C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A501C24D5819000FA698C /* CustomCollectionViewCell.swift */; };
 		FB9BF7CD24DBEAA50080E05D /* ConerRadiusImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BF7CC24DBEAA50080E05D /* ConerRadiusImage.swift */; };
+		FB9BF7D124DC11960080E05D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BF7D024DC11960080E05D /* TestViewController.swift */; };
 		FBA3BB3624D854B3006A7445 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3524D854B3006A7445 /* UIColorExtension.swift */; };
 		FBA3BB3C24D860C0006A7445 /* GetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3B24D860BF006A7445 /* GetAPI.swift */; };
 		FBA3BB3E24D88FE0006A7445 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3BB3D24D88FE0006A7445 /* SettingViewController.swift */; };
@@ -45,6 +46,7 @@
 		FB8152A424D838DB008AE15C /* FontsFree-Net-SFProDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Heavy.ttf"; sourceTree = "<group>"; };
 		FB8152A524D8398D008AE15C /* FontsFree-Net-SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		FB9BF7CC24DBEAA50080E05D /* ConerRadiusImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConerRadiusImage.swift; sourceTree = "<group>"; };
+		FB9BF7D024DC11960080E05D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		FB9C9C2724D5CC8600C26DC1 /* FontsFree-Net-SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		FB9C9C2824D5CD5C00C26DC1 /* FontsFree-Net-SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SFProText-Medium.ttf"; sourceTree = "<group>"; };
 		FBA3BB3524D854B3006A7445 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				FBDD85D224D74AF7003EABAA /* NewsDetailViewController.swift */,
 				FBA3BB3D24D88FE0006A7445 /* SettingViewController.swift */,
 				FBDE7E9624DB27C800286515 /* SavedNewsViewController.swift */,
+				FB9BF7D024DC11960080E05D /* TestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				FB327B6624D9E2EF00C30CB8 /* SettingCoreDataManager.swift in Sources */,
 				FBA3BB3E24D88FE0006A7445 /* SettingViewController.swift in Sources */,
 				FBEC081E24D5477C0044474C /* NewsData.swift in Sources */,
+				FB9BF7D124DC11960080E05D /* TestViewController.swift in Sources */,
 				FBA3BB3C24D860C0006A7445 /* GetAPI.swift in Sources */,
 				FB327B6424D9E10300C30CB8 /* DataModel.xcdatamodeld in Sources */,
 				FBEC083724D576600044474C /* HomeViewController.swift in Sources */,

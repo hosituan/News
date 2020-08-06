@@ -22,8 +22,10 @@ class SavedNewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveNewsCoreDataManager.loadData()
-//        saveNewsCoreDataManager.bindingData()
         bindUI()
+        dismissKeyBoard()
+        tableView.delegate = self
+
     }
     
     @IBAction func tapBackButton(_ sender: UIButton) {
@@ -38,6 +40,27 @@ class SavedNewsViewController: UIViewController {
         saveNewsCoreDataManager.searchResult.asObservable().bind(to: self.tableView.rx.items(cellIdentifier: "cellID", cellType: SavedNewsTableViewCell.self)) {
             (index, data, cell) in cell.configure(title: data.title ?? "No Title" , description: data.description ?? "No Description", cellImageUrl: data.urlToImage ?? "", link: data.url ?? "")
         }.disposed(by: dispose)
+    }
+    
+    func dismissKeyBoard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard()
+    {
+    view.endEditing(true)
+    }
+}
+
+extension SavedNewsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("press")
+        if let url = URL(string: saveNewsCoreDataManager.searchResult.value[indexPath.row].url ?? "https://google.com")  {
+            UIApplication.shared.open(url)
+        }
+        
     }
 }
 

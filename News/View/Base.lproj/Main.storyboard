@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hir-8T-cCl">
-                                <rect key="frame" x="169.5" y="59" width="75" height="21"/>
+                                <rect key="frame" x="172" y="59" width="70" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
                                 <color key="textColor" name="Black Text Color"/>
                                 <nil key="highlightedColor"/>
@@ -89,8 +89,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mn4-eD-BWy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-U1-MKy">
-                                                <rect key="frame" x="366" y="10.5" width="38" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-U1-MKy">
+                                                <rect key="frame" x="404" y="20" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                 <color key="textColor" name="Gray Text Color"/>
                                                 <nil key="highlightedColor"/>
@@ -102,8 +102,8 @@
                                                     <constraint firstAttribute="height" constant="30" id="uAO-xf-akk"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQq-x2-DDH">
-                                                <rect key="frame" x="50" y="10.5" width="54.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQq-x2-DDH">
+                                                <rect key="frame" x="50" y="20" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                 <color key="textColor" name="Gray Text Color"/>
                                                 <nil key="highlightedColor"/>
@@ -124,14 +124,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-Mr-kPK">
                                         <rect key="frame" x="0.0" y="40" width="414" height="227"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-Oo-CnK">
-                                                <rect key="frame" x="10" y="5" width="394" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfe-Oo-CnK">
+                                                <rect key="frame" x="10" y="5" width="394" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="30"/>
                                                 <color key="textColor" name="Black Text Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z5-5s-tk8">
-                                                <rect key="frame" x="10" y="61" width="394" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z5-5s-tk8">
+                                                <rect key="frame" x="10" y="25" width="394" height="0.0"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                 <color key="textColor" name="Gray Text Color"/>
                                                 <nil key="highlightedColor"/>
@@ -178,7 +178,18 @@
                                     <constraint firstAttribute="width" constant="30" id="OnQ-g9-5MH"/>
                                 </constraints>
                                 <state key="normal" image="Search Icon"/>
+                                <connections>
+                                    <action selector="tapSearchButton:" destination="oGU-xR-ewZ" eventType="touchUpInside" id="IrM-SP-nrX"/>
+                                </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGI-s1-Kt3" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="70" y="44" width="274" height="42.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Keyword"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" name="Background Color"/>
                         <constraints>
@@ -186,12 +197,16 @@
                             <constraint firstItem="5fW-En-pCC" firstAttribute="leading" secondItem="wJ4-YJ-0T0" secondAttribute="leading" id="3ak-SE-Bn2"/>
                             <constraint firstItem="4b7-5H-s90" firstAttribute="top" secondItem="wJ4-YJ-0T0" secondAttribute="top" constant="10" id="5cg-bI-wPu"/>
                             <constraint firstItem="gmk-PK-xqU" firstAttribute="top" secondItem="wJ4-YJ-0T0" secondAttribute="top" constant="10" id="7d9-FD-X2k"/>
+                            <constraint firstItem="kGI-s1-Kt3" firstAttribute="centerX" secondItem="XL7-mR-WU4" secondAttribute="centerX" id="CSM-wJ-4kF"/>
                             <constraint firstItem="5fW-En-pCC" firstAttribute="trailing" secondItem="wJ4-YJ-0T0" secondAttribute="trailing" id="My2-4A-dmg"/>
                             <constraint firstItem="orl-jo-qGs" firstAttribute="top" secondItem="Hir-8T-cCl" secondAttribute="bottom" constant="15" id="OoO-Ry-X0a"/>
+                            <constraint firstItem="4b7-5H-s90" firstAttribute="leading" secondItem="kGI-s1-Kt3" secondAttribute="trailing" constant="20" id="Qhb-no-2ed"/>
                             <constraint firstItem="wJ4-YJ-0T0" firstAttribute="trailing" secondItem="orl-jo-qGs" secondAttribute="trailing" id="e9t-T7-4Ro"/>
                             <constraint firstItem="orl-jo-qGs" firstAttribute="leading" secondItem="wJ4-YJ-0T0" secondAttribute="leading" id="klH-A0-OQF"/>
                             <constraint firstItem="Hir-8T-cCl" firstAttribute="centerX" secondItem="XL7-mR-WU4" secondAttribute="centerX" id="nXU-ET-j69"/>
+                            <constraint firstItem="kGI-s1-Kt3" firstAttribute="leading" secondItem="gmk-PK-xqU" secondAttribute="trailing" constant="20" id="oPD-SY-R0H"/>
                             <constraint firstItem="wJ4-YJ-0T0" firstAttribute="trailing" secondItem="4b7-5H-s90" secondAttribute="trailing" constant="20" id="oPz-Xg-nRG"/>
+                            <constraint firstItem="kGI-s1-Kt3" firstAttribute="top" secondItem="wJ4-YJ-0T0" secondAttribute="top" id="plq-QL-Hf5"/>
                             <constraint firstItem="orl-jo-qGs" firstAttribute="height" secondItem="5fW-En-pCC" secondAttribute="height" multiplier="2" id="v5Y-nc-vBi"/>
                             <constraint firstItem="Hir-8T-cCl" firstAttribute="top" secondItem="wJ4-YJ-0T0" secondAttribute="top" constant="15" id="xIV-xj-X35"/>
                             <constraint firstItem="5fW-En-pCC" firstAttribute="top" secondItem="orl-jo-qGs" secondAttribute="bottom" id="zmt-ZA-Y8m"/>
@@ -204,6 +219,7 @@
                         <outlet property="categoryLabel" destination="Hir-8T-cCl" id="7Yp-Hr-9fa"/>
                         <outlet property="collectionView" destination="orl-jo-qGs" id="fBS-9p-OCF"/>
                         <outlet property="descriptionLabel" destination="0Z5-5s-tk8" id="bnj-43-crT"/>
+                        <outlet property="searchTextField" destination="kGI-s1-Kt3" id="lPM-j6-Flc"/>
                         <outlet property="sourceImageView" destination="iRW-bx-EUj" id="u0z-ZU-8Gs"/>
                         <outlet property="sourceLabel" destination="cQq-x2-DDH" id="UHb-wv-Qxm"/>
                         <outlet property="timeLabel" destination="hj9-U1-MKy" id="db3-nw-p9F"/>
@@ -235,13 +251,13 @@
                                                 <rect key="frame" x="20" y="20" width="414" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferences" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRG-rw-zGz">
-                                                        <rect key="frame" x="45" y="10" width="359" height="36"/>
+                                                        <rect key="frame" x="45" y="10" width="359" height="35"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="30"/>
                                                         <color key="textColor" name="Black Text Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gM-50-18H">
-                                                        <rect key="frame" x="20" y="56" width="374" height="1"/>
+                                                        <rect key="frame" x="20" y="55" width="374" height="1"/>
                                                         <color key="backgroundColor" red="0.18039215689999999" green="0.1843137255" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="esS-Mw-lSh"/>
@@ -276,7 +292,7 @@
                                                 <rect key="frame" x="20" y="120" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T46-I9-4up">
-                                                        <rect key="frame" x="20" y="10" width="89" height="23"/>
+                                                        <rect key="frame" x="20" y="10" width="82" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="23" id="cZG-JD-5Ar"/>
                                                         </constraints>
@@ -316,7 +332,7 @@
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63n-kr-bws">
                                                                                         <rect key="frame" x="0.0" y="46.5" width="110" height="30.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
-                                                                                        <color key="textColor" name="Black Text Color"/>
+                                                                                        <color key="textColor" red="0.1803921568627451" green="0.18431372549019609" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -350,9 +366,9 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBt-RG-3oi">
-                                                                                        <rect key="frame" x="0.0" y="48.5" width="81" height="28.5"/>
+                                                                                        <rect key="frame" x="0.0" y="48.5" width="78" height="28.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
-                                                                                        <color key="textColor" name="Black Text Color"/>
+                                                                                        <color key="textColor" red="0.18039215689999999" green="0.1843137255" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -381,9 +397,9 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjY-uG-ATa">
-                                                                                        <rect key="frame" x="0.0" y="48.5" width="58" height="28.5"/>
+                                                                                        <rect key="frame" x="0.0" y="48.5" width="56.5" height="28.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
-                                                                                        <color key="textColor" name="Black Text Color"/>
+                                                                                        <color key="textColor" red="0.18039215689999999" green="0.1843137255" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -443,7 +459,7 @@
                                                 <rect key="frame" x="20" y="320" width="414" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4o-zV-HuO">
-                                                        <rect key="frame" x="20" y="10" width="77.5" height="23"/>
+                                                        <rect key="frame" x="20" y="10" width="72" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="23" id="9lX-Xh-Hwu"/>
                                                         </constraints>
@@ -481,7 +497,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Science" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fi-04-bpb">
-                                                                                        <rect key="frame" x="0.0" y="48.5" width="75" height="28.5"/>
+                                                                                        <rect key="frame" x="0.0" y="48.5" width="71.5" height="28.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                                                         <color key="textColor" name="Black Text Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -514,7 +530,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bussiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGT-CR-aYb">
-                                                                                        <rect key="frame" x="0.0" y="48.5" width="94.5" height="28.5"/>
+                                                                                        <rect key="frame" x="0.0" y="48.5" width="91.5" height="28.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                                                         <color key="textColor" name="Black Text Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -545,7 +561,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aC1-1f-wbN">
-                                                                                        <rect key="frame" x="0.0" y="48.5" width="62.5" height="28.5"/>
+                                                                                        <rect key="frame" x="0.0" y="48.5" width="59.5" height="28.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                                                         <color key="textColor" name="Black Text Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -607,7 +623,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLA-aR-xf9">
-                                                                                        <rect key="frame" x="0.0" y="48.5" width="61.5" height="28.5"/>
+                                                                                        <rect key="frame" x="0.0" y="48.5" width="58" height="28.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                                                         <color key="textColor" name="Black Text Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -638,7 +654,7 @@
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFj-jz-Mhb">
-                                                                                        <rect key="frame" x="0.0" y="56.5" width="109" height="20.5"/>
+                                                                                        <rect key="frame" x="0.0" y="56.5" width="102" height="20.5"/>
                                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                                                         <color key="textColor" name="Black Text Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -726,7 +742,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-BP-DVO">
-                                                                        <rect key="frame" x="60" y="0.0" width="79" height="75"/>
+                                                                        <rect key="frame" x="60" y="0.0" width="75.5" height="75"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                                         <color key="textColor" name="Black Text Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -740,7 +756,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI9-NI-ulf">
-                                                                        <rect key="frame" x="261" y="0.0" width="58" height="75"/>
+                                                                        <rect key="frame" x="263.5" y="0.0" width="55.5" height="75"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                                         <color key="textColor" name="Black Text Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -775,7 +791,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show only favorite news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xF-g6-0MD">
-                                                                        <rect key="frame" x="60" y="0.0" width="193.5" height="75"/>
+                                                                        <rect key="frame" x="60" y="0.0" width="185.5" height="75"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                                         <color key="textColor" name="Black Text Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -810,7 +826,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqA-tA-wcE">
-                                                                        <rect key="frame" x="60" y="0.0" width="87.5" height="75"/>
+                                                                        <rect key="frame" x="60" y="0.0" width="84.5" height="75"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                                         <color key="textColor" name="Black Text Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -842,7 +858,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help &amp; Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE5-I0-YGG">
-                                                                        <rect key="frame" x="60" y="0.0" width="123.5" height="75"/>
+                                                                        <rect key="frame" x="60" y="0.0" width="117" height="75"/>
                                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                                         <color key="textColor" name="Black Text Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -953,7 +969,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eah-WO-gbv">
-                                        <rect key="frame" x="54" y="12" width="340" height="36"/>
+                                        <rect key="frame" x="54" y="12" width="340" height="35"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="30"/>
                                         <color key="textColor" name="Black Text Color"/>
                                         <nil key="highlightedColor"/>
@@ -970,7 +986,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILU-Ea-aA8" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="20" y="58" width="374" height="46.5"/>
+                                        <rect key="frame" x="20" y="57" width="374" height="46.5"/>
                                         <color key="textColor" name="Black Text Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1027,13 +1043,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COu-ZO-6NX">
-                                                    <rect key="frame" x="170" y="53" width="214" height="19.5"/>
+                                                    <rect key="frame" x="170" y="53" width="214" height="19"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                                     <color key="textColor" name="Gray Text Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFS-84-fVp">
-                                                    <rect key="frame" x="170" y="80.5" width="214" height="19"/>
+                                                    <rect key="frame" x="170" y="80" width="214" height="19"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                                     <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1066,7 +1082,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Background Color"/>
                         <constraints>
                             <constraint firstItem="oFT-d6-OIh" firstAttribute="top" secondItem="CL1-83-gTk" secondAttribute="top" id="JtD-Xv-yu3"/>
                             <constraint firstItem="CL1-83-gTk" firstAttribute="trailing" secondItem="oFT-d6-OIh" secondAttribute="trailing" id="Lze-o8-f4v"/>
@@ -1100,7 +1116,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5h-Ua-uB3" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="636.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="635"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2c-Uz-CfW" userLabel="Image View">
                                                 <rect key="frame" x="0.0" y="-44" width="414" height="500"/>
@@ -1168,13 +1184,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3C-ia-AlR">
-                                                        <rect key="frame" x="50" y="15.5" width="54.5" height="19"/>
+                                                        <rect key="frame" x="50" y="15.5" width="51" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                         <color key="textColor" name="Gray Text Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31O-9M-v5c">
-                                                        <rect key="frame" x="366" y="15.5" width="38" height="19"/>
+                                                        <rect key="frame" x="369" y="15.5" width="35" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                                         <color key="textColor" name="Gray Text Color"/>
                                                         <nil key="highlightedColor"/>
@@ -1192,19 +1208,19 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-cU-OCn">
-                                                <rect key="frame" x="10" y="516" width="394" height="36"/>
+                                                <rect key="frame" x="10" y="516" width="394" height="35"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="30"/>
                                                 <color key="textColor" name="Black Text Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5w-AH-aq2">
-                                                <rect key="frame" x="10" y="562" width="394" height="19.5"/>
+                                                <rect key="frame" x="10" y="561" width="394" height="19"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                 <color key="textColor" name="Gray Text Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-Je-DJP" userLabel="Bottom View">
-                                                <rect key="frame" x="0.0" y="601.5" width="414" height="25"/>
+                                                <rect key="frame" x="0.0" y="600" width="414" height="25"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I8-RZ-9Cj">
                                                         <rect key="frame" x="10" y="3" width="394" height="19"/>

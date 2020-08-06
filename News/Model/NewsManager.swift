@@ -15,6 +15,7 @@ var language = "en"
 var favoriteCategory:[String] = [] //favorite category
 var coreDataManager = SettingCoreDataManager()
 var category:String = ""
+var keyWord = ""
 
 
 class NewsManager {
@@ -36,7 +37,7 @@ class NewsManager {
         print("show favorite:\(isShowFavotie)")
         if category == "all" || ( !isShowFavotie && category != "myFeed") || favoriteCategory.count == 0  || ( favoriteCategory.count  == 1 && favoriteCategory[0] == "" )
         {
-            let urlString = "\(self.url)&language=\(language)"
+            let urlString = "\(self.url)&q=\(keyWord)&language=\(language)"
             print(urlString)
             getApi.getFromAPI(for: NewsData.self, urlString: urlString) {
                 result in
@@ -50,7 +51,7 @@ class NewsManager {
             for i in 0..<count {
                 if (favoriteCategory[i] != "") {
                     myGroup.enter()
-                    let urlString = "\(self.url)&language=\(language)&category=\(favoriteCategory[i])"
+                    let urlString = "\(self.url)&q=\(keyWord)&language=\(language)&category=\(favoriteCategory[i])"
                     print(urlString)
                     getApi.getFromAPI(for: NewsData.self, urlString: urlString) {
                         result in
@@ -91,43 +92,69 @@ class NewsManager {
         return articles.count
     }
     func getURLImage(_ index: Int) -> URL {
+        
         let noImageUrl = "https://lh3.googleusercontent.com/proxy/Pae83kprRF_GH8bb5YREkoE8iU6sx1ZeaRvemPjw1qu67mWqulZwneMhVuECtfy6mONmZUg0UuNvDc-JYv7t1ftwJCoHNGeW1wI3mR5k1FBu-5KL0-1-XjLW"
-        if articles[index].urlToImage != nil {
-            if let url = URL(string: (articles[index].urlToImage!)) {
-                return url
+        if articles.count > 0 {
+            if articles[index].urlToImage != nil {
+                if let url = URL(string: (articles[index].urlToImage!)) {
+                    return url
+                }
+                return URL(string: noImageUrl)!
             }
-            return URL(string: noImageUrl)!
         }
         //no image URL
         return URL(string: noImageUrl)!
     }
     func getTitle(_ index: Int) -> String {
-        return articles[index].title ?? "No Title"
+        if articles.count > 0 {
+            return articles[index].title ?? "No Title"
+        }
+        return "No Title"
     }
     
     func getTime(_ index: Int) -> String {
-        if let time = articles[index].publishedAt {
-            let timeArr = time.components(separatedBy: "T")
-            return timeArr[0]
+        if articles.count > 0 {
+            if let time = articles[index].publishedAt {
+                let timeArr = time.components(separatedBy: "T")
+                return timeArr[0]
+            }
         }
         return "Unknow time"
     }
     
     func getDescription(_ index: Int) -> String {
-        return articles[index].description ?? "No description"
+        let noDes = "No description"
+        if articles.count > 0 {
+            return articles[index].description ?? noDes
+        }
+        return noDes
     }
     func getLink(_ index: Int) -> String {
-        return articles[index].url ?? "This post doesn't have link"
+        if articles.count > 0 {
+            return articles[index].url ?? "This post doesn't have link"
+        }
+        return "This post doesn't have link"
     }
     func getSource(_ index: Int) -> String {
-        return articles[index].source?.name ?? "Unknown"
+        if articles.count > 0 {
+            return articles[index].source?.name ?? "Unknown"
+        }
+        return "Unknown"
     }
     func getSourceId(_ index: Int) -> String {
-        return articles[index].source?.id ?? "Unknown"
+        if articles.count > 0 {
+                    return articles[index].source?.id ?? "Unknown"
+        }
+        return "Unknown"
+
     }
     
     func getContent(_ index: Int) -> String {
-        return articles[index].content ?? "This news doesn't have content."
+        if articles.count > 0 {
+            return articles[index].content ?? "This news doesn't have content."
+        }
+        return "This news doesn't have content."
+        
     }
     
     func getSourceURL(_ index: Int) -> URL {
@@ -141,21 +168,25 @@ class NewsManager {
     }
     
     func getTempSourceImageURL(_ index: Int) -> URL {
-        if let url = articles[index].url {
-            let urlArr = url.components(separatedBy: "/")
-            if let URL = URL(string: "https://\(urlArr[2])/favicon.ico") {
-                return URL
+        if articles.count > 0 {
+            if let url = articles[index].url {
+                let urlArr = url.components(separatedBy: "/")
+                if let URL = URL(string: "https://\(urlArr[2])/favicon.ico") {
+                    return URL
+                }
             }
         }
         return URL(string: "https://www.google.com/favicon.ico")!
     }
     
     func getSourceImageURL(_ index: Int, completionHandler: @escaping (URL)-> ()){
-        if let url = articles[index].url {
-            getIconURL(url: url) {
-                finalLink in
-                if let link = URL(string: finalLink) {
-                    completionHandler(link)
+        if articles.count > 0 {
+            if let url = articles[index].url {
+                getIconURL(url: url) {
+                    finalLink in
+                    if let link = URL(string: finalLink) {
+                        completionHandler(link)
+                    }
                 }
             }
         }
