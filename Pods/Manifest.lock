@@ -1,0 +1,58 @@
+PODS:
+  - MBProgressHUD (1.2.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - SkyFloatingLabelTextField (3.8.0)
+  - SwiftLinkPreview (3.1.0)
+  - SwiftMessages (8.0.0):
+    - SwiftMessages/App (= 8.0.0)
+  - SwiftMessages/App (8.0.0)
+  - Sync (6.0.3)
+  - UPCarouselFlowLayout (1.1.2)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 1.2.0)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - SDWebImage (~> 5.0)
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftLinkPreview (~> 3.1.0)
+  - SwiftMessages
+  - Sync (~> 6)
+  - UPCarouselFlowLayout
+
+SPEC REPOS:
+  trunk:
+    - MBProgressHUD
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+    - SkyFloatingLabelTextField
+    - SwiftLinkPreview
+    - SwiftMessages
+    - Sync
+    - UPCarouselFlowLayout
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+  SwiftLinkPreview: 3d924eeaae8d17410a827a4b37675713af1a0a8a
+  SwiftMessages: 29e7975b1173fd4e8357600c6518b5a59bc607d6
+  Sync: 40735880f9c7dfb222fa48078bea320a90276d62
+  UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
+
+PODFILE CHECKSUM: f3e88718d00438e75ec7615cc4d0b42e1584ce8a
+
+COCOAPODS: 1.9.3
