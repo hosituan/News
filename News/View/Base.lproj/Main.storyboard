@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oGU-xR-ewZ">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -315,7 +315,7 @@
                                                         <rect key="frame" x="0.0" y="43" width="414" height="137"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7M-FC-zFj" userLabel="Content Scroll View">
-                                                                <rect key="frame" x="20" y="0.0" width="535" height="137"/>
+                                                                <rect key="frame" x="20" y="0.0" width="545" height="137"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8d-L1-znA" userLabel="All News" customClass="CategoryCornerRadiusView" customModule="News" customModuleProvider="target">
                                                                         <rect key="frame" x="5" y="10" width="150" height="117"/>
@@ -424,7 +424,7 @@
                                                                     <constraint firstItem="v75-e2-wfb" firstAttribute="top" secondItem="G7M-FC-zFj" secondAttribute="top" constant="10" id="eUO-Xe-mjL"/>
                                                                     <constraint firstItem="K8d-L1-znA" firstAttribute="top" secondItem="G7M-FC-zFj" secondAttribute="top" constant="10" id="eUj-Fb-USQ"/>
                                                                     <constraint firstItem="v75-e2-wfb" firstAttribute="leading" secondItem="fkc-nF-ORW" secondAttribute="trailing" constant="30" id="h8u-us-Pft"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="v75-e2-wfb" secondAttribute="trailing" constant="20" id="n6Y-f9-g5l"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="v75-e2-wfb" secondAttribute="trailing" constant="30" id="n6Y-f9-g5l"/>
                                                                     <constraint firstAttribute="bottom" secondItem="v75-e2-wfb" secondAttribute="bottom" constant="10" id="tYg-cx-DIc"/>
                                                                     <constraint firstAttribute="bottom" secondItem="K8d-L1-znA" secondAttribute="bottom" constant="10" id="xZs-Nj-8j4"/>
                                                                 </constraints>
@@ -1019,7 +1019,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2sh-oj-gBk">
                                 <rect key="frame" x="0.0" y="164" width="414" height="732"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="Background Color"/>
                                 <color key="sectionIndexBackgroundColor" name="Background Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cellID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="120" id="tIQ-UK-3BH" customClass="SavedNewsTableViewCell" customModule="News" customModuleProvider="target">
@@ -1299,8 +1299,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IvQ-6m-4Dw"/>
-        <segue reference="ZpF-SJ-FC7"/>
+        <segue reference="DpU-Ol-msh"/>
+        <segue reference="jxr-Vs-ka8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Search Icon" width="40" height="40"/>
